@@ -22,6 +22,9 @@ import qrcode from '../components/qrcode/index.vue'
 //base64
 import base64 from '../components/base64/index.vue'
 
+//URI encode
+import urlencode from '../components/url/encode.vue'
+
 Vue.use(Router)
 
 export default new Router({
@@ -63,6 +66,11 @@ export default new Router({
 	    path: '/base64',
 	    name: 'base64',
 	    component: base64
+  	},
+  	{
+	    path: '/encode',
+	    name: 'encode',
+	    component: urlencode
   	}
   ]
 })

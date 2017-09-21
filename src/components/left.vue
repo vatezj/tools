@@ -87,6 +87,13 @@
 				<div class="mdui-list-item-content">二维码</div>
 			</div>
 		</router-link>
+		<router-link to="/encode">
+			<div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+			<!-- <i class="mdui-icon material-icons">accessibility</i> -->
+				<i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-teal">accessibility</i>
+				<div class="mdui-list-item-content">URL encode</div>
+			</div>
+		</router-link>
 		<!-- <router-link to="/base64">
 			<div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
 				<i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-indigo">all_out</i>
