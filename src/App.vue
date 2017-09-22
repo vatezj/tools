@@ -54,4 +54,7 @@ export default {
 .border-bottom-ccc{
   border-bottom: 1px solid #ccc;
 }
+.text-center{
+  text-align: center;
+}
 </style>
