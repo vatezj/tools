@@ -91,7 +91,7 @@
 			<div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
 			<!-- <i class="mdui-icon material-icons">accessibility</i> -->
 				<i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-teal">accessibility</i>
-				<div class="mdui-list-item-content">URL encode</div>
+				<div class="mdui-list-item-content">URL encode/decode</div>
 			</div>
 		</router-link>
 		<!-- <router-link to="/base64">
