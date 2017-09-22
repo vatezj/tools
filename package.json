@@ -25,6 +25,7 @@
     "vue-base64-upload": "^1.0.1",
     "vue-cookie": "^1.1.4",
     "vue-qart": "^2.1.0",
+    "vue-qr": "^1.2.3",
     "vue-router": "^2.7.0"
   },
   "devDependencies": {
