@@ -25,6 +25,9 @@ import base64 from '../components/base64/index.vue'
 //URI encode
 import urlencode from '../components/url/encode.vue'
 
+//翻译
+import translation from '../components/translation.vue'
+
 Vue.use(Router)
 
 export default new Router({
@@ -71,6 +74,11 @@ export default new Router({
 	    path: '/encode',
 	    name: 'encode',
 	    component: urlencode
+  	},
+  	{
+	    path: '/translation',
+	    name: 'translation',
+	    component: translation
   	}
   ]
 })
