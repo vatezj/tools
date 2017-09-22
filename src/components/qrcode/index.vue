@@ -2,22 +2,22 @@
 <div class="mdui-container doc-container doc-no-cover pdl240">
   <h1 class="doc-title mdui-text-color-theme">二维码生成</h1>
   <div class="mdui-col-xs-12 mdui-col-sm-12 mdui-col-md-6 mdui-col-lg-6 mdui-col-xl-6">
-      <div class="mdui-textfield mdui-textfield-floating-label">
+      <div class="mdui-textfield mdui-textfield-floating-label mdui-textfield-focus">
         <i class="mdui-icon material-icons">message</i>
         <label class="mdui-textfield-label">二维码内容</label>
         <input class="mdui-textfield-input" v-model='url'></input>
       </div>
-    <!--   <div class="mdui-textfield mdui-textfield-floating-label">
+    <!--   <div class="mdui-textfield mdui-textfield-floating-label mdui-textfield-focus">
         <i class="mdui-icon material-icons">tv</i>
         <label class="mdui-textfield-label">二维码login</label>
         <input class="mdui-textfield-input" v-model='logoSrc'></input>
       </div> -->
-      <div class="mdui-textfield mdui-textfield-floating-label">
+      <div class="mdui-textfield mdui-textfield-floating-label mdui-textfield-focus">
         <i class="mdui-icon material-icons">beenhere</i>
         <label class="mdui-textfield-label">数据区域点缩小比例</label>
         <input class="mdui-textfield-input" v-model='dotScale'></input>
       </div>
-      <div class="mdui-textfield mdui-textfield-floating-label">
+      <div class="mdui-textfield mdui-textfield-floating-label mdui-textfield-focus">
         <i class="mdui-icon material-icons">child_care</i>
         <label class="mdui-textfield-label">size</label>
         <input class="mdui-textfield-input" v-model='size'></input>

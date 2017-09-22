@@ -2,26 +2,25 @@
 
 <div class="mdui-container doc-container doc-no-cover pdl240">
 	<h1 class="doc-title mdui-text-color-theme">URL encode/decode</h1>
-	<div class="content">
-		<div class="mdui-col-xs-12 mdui-col-sm-12 mdui-col-md-5 mdui-col-lg-5 mdui-col-xl-5">
-			<div class="encode">
-				<textarea ref='encode'>
-					
-				</textarea>
-			</div>
+	<div class="mdui-col-xs-12 mdui-col-sm-12 mdui-col-md-5 mdui-col-lg-5 mdui-col-xl-5">
+		<div class="encode">
+			<textarea ref='encode'>
+				
+			</textarea>
 		</div>
-		<div class="mdui-col-xs-12 mdui-col-sm-12 mdui-col-md-2 mdui-col-lg-2 mdui-col-xl-2 w2">
-			<div class="change-button">
-				<button class="mdui-btn mdui-color-theme-accent mdui-ripple" @click="urlEncode()">编码<i class="mdui-icon material-icons">arrow_forward</i></button>
-				<button class="mdui-btn mdui-color-theme-accent mdui-ripple" @click="urlDecode()"><i class="mdui-icon material-icons">arrow_back</i>解码</button>
-			</div>
+	</div>
+	<div class="mdui-col-xs-12 mdui-col-sm-12 mdui-col-md-2 mdui-col-lg-2 mdui-col-xl-2 w2">
+		<div class="change-button">
+			<button class="mdui-btn mdui-color-theme-accent mdui-ripple" @click="urlEncode()">编码<i class="mdui-icon material-icons">arrow_forward</i></button>
+			<br>
+			<button class="mdui-btn mdui-color-theme-accent mdui-ripple" @click="urlDecode()"><i class="mdui-icon material-icons">arrow_back</i>解码</button>
 		</div>
-		<div class="mdui-col-xs-12 mdui-col-sm-12 mdui-col-md-5 mdui-col-lg-5 mdui-col-xl-5">
-			<div class="encode">
-				<textarea ref='decode'>
-					
-				</textarea>
-			</div>
+	</div>
+	<div class="mdui-col-xs-12 mdui-col-sm-12 mdui-col-md-5 mdui-col-lg-5 mdui-col-xl-5">
+		<div class="encode">
+			<textarea ref='decode'>
+				
+			</textarea>
 		</div>
 	</div>
 </div>
