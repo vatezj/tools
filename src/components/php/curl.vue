@@ -46,7 +46,6 @@
 </div>
 </template>
 <script>
-document.title="woshi "
 import axios from 'axios'
 import api from '../../fetch/api.js'
 import fun from '../../fetch/fun.js'
