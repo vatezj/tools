@@ -9,10 +9,9 @@
 			</textarea>
 		</div>
 	</div>
-	<div class="mdui-col-xs-12 mdui-col-sm-12 mdui-col-md-2 mdui-col-lg-2 mdui-col-xl-2 w2">
+	<div class="mdui-col-xs-12 mdui-col-sm-12 mdui-col-md-2 mdui-col-lg-2 mdui-col-xl-2 w1">
 		<div class="change-button">
-			<button class="mdui-btn mdui-color-theme-accent mdui-ripple" @click="urlEncode()">编码<i class="mdui-icon material-icons">arrow_forward</i></button>
-			<br>
+			<button class="mdui-btn mdui-color-theme-accent mdui-ripple v30" @click="urlEncode()">编码<i class="mdui-icon material-icons">arrow_forward</i></button>
 			<button class="mdui-btn mdui-color-theme-accent mdui-ripple" @click="urlDecode()"><i class="mdui-icon material-icons">arrow_back</i>解码</button>
 		</div>
 	</div>
@@ -56,31 +55,33 @@ export default {
 .content{
 	/* text-align: center; */
 }
-.w2{
-	/* margin: 0 auto; */
-	/* border: 1px solid red; */
+.w1{
+	text-align: center;
 }
 .encode{
-	width: 100%;
-	height: 300px;
+	padding: 10px;
 }
 .encode textarea{
 	width: 100%;
-	height: 100%;
+	height: 300px;
+	padding: 10px;
+	font-weight: bold;
+	font-family: "微软雅黑";
+	font-size: 18px;
 }
-.mdui-btn{
+.v30{
 	margin-bottom: 30px;
 }
 .change-button{
-	text-align: center;
-	padding: 100px 10px;
-	
+	/* text-align: center;
+	padding: 100px 10px; */
+	padding: 100px 0;
 }
 @media screen and (max-width: 1024px) {
     .change-button{
 		padding: 30px 0;
 	}
-	.mdui-btn{
+	.v30{
 		margin-bottom: 0px;
 	}
 }
