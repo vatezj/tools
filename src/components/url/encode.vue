@@ -11,7 +11,8 @@
 	</div>
 	<div class="mdui-col-xs-12 mdui-col-sm-12 mdui-col-md-2 mdui-col-lg-2 mdui-col-xl-2 w1">
 		<div class="change-button">
-			<button class="mdui-btn mdui-color-theme-accent mdui-ripple v30" @click="urlEncode()">编码<i class="mdui-icon material-icons">arrow_forward</i></button>
+			<button class="mdui-btn mdui-color-theme-accent mdui-ripple" @click="urlEncode()">编码<i class="mdui-icon material-icons">arrow_forward</i></button>
+			<div class="mb30"></div>
 			<button class="mdui-btn mdui-color-theme-accent mdui-ripple" @click="urlDecode()"><i class="mdui-icon material-icons">arrow_back</i>解码</button>
 		</div>
 	</div>
@@ -69,7 +70,7 @@ export default {
 	font-family: "微软雅黑";
 	font-size: 18px;
 }
-.v30{
+.mb30{
 	margin-bottom: 30px;
 }
 .change-button{
@@ -81,8 +82,8 @@ export default {
     .change-button{
 		padding: 30px 0;
 	}
-	.v30{
-		margin-bottom: 0px;
+	.mb30{
+		display: none;
 	}
 }
 </style>
