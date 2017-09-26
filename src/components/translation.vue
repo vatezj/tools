@@ -76,16 +76,20 @@ export default {
 	        }
 	        api.Curl(url,data)
   			.then(res => {
-  				var ret = res.trans_result[0].dst;
+  				var ret = res.trans_result;
+  				for(var i =0;i<=ret.length;i++)
+  				{
+  					console.log(ret[i].dst)
+  				}
   				if(type == 1)
   				{
-  					this.$refs.en.value = ret;
+					this.$refs.en.value = ret;
   				}else {
   					this.$refs.zh.value = ret;
   				}
 	        })
 	        .catch((error) => {
-	        	swal("出错了!", "请求出错!", "error")
+	        	// swal("出错了!", "请求出错!", "error")
 	           console.log(error)
 	           return false
 	        })
