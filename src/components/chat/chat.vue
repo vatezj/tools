@@ -3,12 +3,12 @@
      <div class="chat-out  mdui-ripple" @click='hideChat' >
         <i class="mdui-icon material-icons">close</i>
       </div>
-    <div class="chat-content" v-if="login">
+    <div class="chat-content " v-if="login">
       <div class="top">
         <div class="nickname">{{ loginUser }}</div>
         <div class="signature">在深邃的编码世界，做一枚轻盈的纸飞机</div>
       </div>
-      <div class="chat-message">
+      <div class="chat-message mdui-color-theme">
         <div class="message" ref='message_'>
           <div class="message-list" v-for="list in messages">
             <div class="message-top">
@@ -246,7 +246,7 @@ export default {
 }
 
 .chat-message {
-  background-color: rebeccapurple;
+  /* background-color: rebeccapurple; */
   height: 500px;
 }
 
