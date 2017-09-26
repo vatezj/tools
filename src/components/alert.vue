@@ -281,11 +281,41 @@
 <script>
 export default {
   name: 'alert',
+  mounted () {  
+      this.init()
+  },
   methods:{
+    init()
+    {
+      var bg = this.$ls.get('bg');
+      if(!bg){
+        bg = 'mdui-theme-layout-1'
+      }
+      var primary = this.$ls.get('primary');
+      if(!primary){
+        primary = 'mdui-theme-primary-teal'
+      }
+      var accent = this.$ls.get('accent');
+      if(!accent){
+        accent = 'mdui-theme-accent-cyan'
+      }
+      
+      //this.$ls.set('foo', 'boo', 60 * 60 * 1000);
+      document.getElementById("body").removeAttribute("class");
+      document.getElementById("body").classList.add('mdui-loaded');
+      document.getElementById("body").classList.add('mdui-drawer-body-left');
+      document.getElementById("body").classList.add('mdui-appbar-with-toolbar');
+      document.getElementById("body").classList.add(bg);
+      document.getElementById("body").classList.add(primary);
+      document.getElementById("body").classList.add(accent);
+    },
     change(){
       let bg = 'mdui-theme-layout-'+this.check_radio('doc-theme-layout');
       let primary = 'mdui-theme-primary-'+this.check_radio('doc-theme-primary');
       let accent = 'mdui-theme-accent-'+this.check_radio('doc-theme-accent');
+      this.$ls.set('bg', bg, 60 * 60 * 1000);
+      this.$ls.set('primary', primary, 60 * 60 * 1000);
+      this.$ls.set('accent', accent, 60 * 60 * 1000);
       if(this.check_radio('doc-theme-layout') == ''){
         bg = ''
       } 
