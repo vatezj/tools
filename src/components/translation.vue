@@ -77,15 +77,20 @@ export default {
 	        api.Curl(url,data)
   			.then(res => {
   				var ret = res.trans_result;
+  				var end = '';
   				for(var i =0;i<=ret.length;i++)
   				{
-  					console.log(ret[i].dst)
+  					if(ret[i]){
+  						end += ret[i].dst+"\r\n";
+  					}
+  					
   				}
+  				console.log(end)
   				if(type == 1)
   				{
-					this.$refs.en.value = ret;
+					this.$refs.en.value = end;
   				}else {
-  					this.$refs.zh.value = ret;
+  					this.$refs.zh.value = end;
   				}
 	        })
 	        .catch((error) => {
