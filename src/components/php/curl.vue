@@ -5,13 +5,13 @@
 		<h1 class="doc-title mdui-text-color-theme">模拟 POST GET请求</h1>
 	    <div class="select-url">
 	   		<div class="clear">
-		   		<div class="select-url-type fl">
-		   			<select class="mdui-select" mdui-select ref='type'>
+		   		<div class="select-url-type fl" style="border:none;">
+		   			<select class="mdui-select" mdui-select ref='type' style="border:none;">
 			          <option v-for='type in types' :value="type.type">{{ type.name }}</option>
 			          <!-- <option value="3" disabled>State 3</option> -->
 			    	</select>
 		   		</div>
-			    <div class="mdui-textfield mdui-textfield-floating-label select-url-input fl mdui-textfield-focus">
+			    <div class="mdui-textfield mdui-textfield-floating-label select-url-input fl mdui-textfield-focus" style="border:none;">
 			          <i class="mdui-icon material-icons">tv</i>
 			          <label class="mdui-textfield-label">url</label>
 			          <input class="mdui-textfield-input" v-model='sendUrl'></input>
