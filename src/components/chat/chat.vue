@@ -101,7 +101,9 @@ export default {
     },
     logined()
     {
-      this.$cookie.set('user', this.user, 3600);
+      var date = new Date;
+      date.setDate(date.getDate() + 21);
+      this.$cookie.set('user', this.user, { expires: '1h' });
       this.loginUser = this.user;
       this.logini = false;
       this.login = true;
