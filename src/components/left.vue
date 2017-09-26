@@ -41,7 +41,13 @@
 				<router-link to="/php/curl"><a href="#/php/curl" class="mdui-list-item mdui-ripple ">post/get 请求</a></router-link>
 			</div>
 		</div> -->
-		<div class="mdui-collapse-item" :class="{'mdui-collapse-item-open':zip}">
+		<router-link to="/zip/json">
+			<div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+				<i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">widgets</i>
+				<div class="mdui-list-item-content">json</div>
+			</div>
+		</router-link>
+		<!-- <div class="mdui-collapse-item" :class="{'mdui-collapse-item-open':zip}">
 			<div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
 				<i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-deep-brown">widgets</i>
 				<div class="mdui-list-item-content" ref="php">压缩/格式化</div>
@@ -50,13 +56,8 @@
 			<div class="mdui-collapse-item-body mdui-list">
 				<router-link to="/zip/json"><a href="#/zip/json" class="mdui-list-item mdui-ripple ">json</a></router-link>
 			</div>
-			<!-- <div class="mdui-collapse-item-body mdui-list">
-				<router-link to="/zip/html"><a href="#/zip/html" class="mdui-list-item mdui-ripple ">HTML</a></router-link>
-			</div>
-			<div class="mdui-collapse-item-body mdui-list">
-				<router-link to="/zip/javascript"><a href="#/zip/javascript" class="mdui-list-item mdui-ripple ">javascript</a></router-link>
-			</div> -->
-		</div>
+			
+		</div> -->
 		<!-- <router-link to="/json">
 			<div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
 				<i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown">widgets</i>
