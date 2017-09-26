@@ -12,6 +12,10 @@ import VueCookie from 'vue-cookie';
 // Tell Vue to use the plugin 
 Vue.use(VueCookie)
 
+import VueLocalStorage from 'vue-ls';
+Vue.use(VueLocalStorage);
+
+
 import VueLazyComponent from '@xunlei/vue-lazy-component'
 
 Vue.use(VueLazyComponent)
