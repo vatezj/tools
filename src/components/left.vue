@@ -56,7 +56,7 @@
 			<div class="mdui-collapse-item-body mdui-list">
 				<router-link to="/zip/json"><a href="#/zip/json" class="mdui-list-item mdui-ripple ">json</a></router-link>
 			</div>
-			
+
 		</div> -->
 		<!-- <router-link to="/json">
 			<div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
@@ -103,6 +103,14 @@
 				<div class="mdui-list-item-content">翻译</div>
 			</div>
 		</router-link>
+
+    <router-link to="/base64">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <!-- <i class="mdui-icon material-icons">accessibility</i> -->
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">view_carousel</i>
+        <div class="mdui-list-item-content">Generating Base64</div>
+      </div>
+    </router-link>
 		<!-- <router-link to="/base64">
 			<div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
 				<i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-indigo">all_out</i>
@@ -209,7 +217,7 @@ export default {
 	      ]
 	    }
   	},
-  	mounted () {  
+  	mounted () {
     	let routePath = this.$route.fullPath
     	var ss = routePath.split("/");
     	if(ss[1] == 'php')
@@ -220,8 +228,8 @@ export default {
 	methods: {
 	 	openTab($id)
 	 	{
-	 		
-	 	}  
+
+	 	}
 	}
 }
 </script>
