@@ -41,7 +41,7 @@ export default {
 	    return {
 	      zh:'木木工具',
 	      en:'Wood tools',
-	      baseU:'http://api.vate.ren/Api/translate',
+	      baseU:'https://api.vate.ren/Api/translate',
 	      query:'翻译',
 	      appid:'20170922000084666',
 	      salt:(new Date).getTime(),

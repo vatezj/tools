@@ -54,7 +54,7 @@ export default {
   data ()
   {
   	return {
-  		baseU: 'http://api.vate.ren/Api/curl',
+  		baseU: 'https://api.vate.ren/Api/curl',
   		resultJson:'',
   		showResult:false,
       sendUrl:'http://music.163.com/api/playlist/detail?id=387699584',
