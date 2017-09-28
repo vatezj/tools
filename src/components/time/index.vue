@@ -24,13 +24,13 @@
 						<button class="mdui-btn mdui-color-theme-accent mdui-ripple" @click="uTod(inTime)">转化为北京时间</button>&nbsp;&nbsp;&nbsp;&nbsp;
 						<input type="" :value="dateB" v-model='dateB'>
 					</div>
-					
+
 				</div>
 			</div>
 			<div class="change-time">
 				<div class="mdui-container">
 					<div class="mdui-col-xs-12 mdui-col-sm-12 mdui-col-md-12 mdui-col-lg-12 mdui-col-xl-12 vt">北京时间（年-月-日 时:分:秒）:&nbsp;&nbsp;&nbsp;&nbsp;<input type="" :value="dateA" v-model="dateA">&nbsp;&nbsp;&nbsp;&nbsp;<button class="mdui-btn mdui-color-theme-accent mdui-ripple" @click="dToU(dateA)">转化为unix时间戳</button>&nbsp;&nbsp;&nbsp;&nbsp;<input type="" :value="unixA" v-model='unixA'></div>
-					
+
 				</div>
 			</div>
 		</div>
@@ -41,8 +41,8 @@
 import time from '../../fetch/time.js'
 export default {
 	name: 'time',
-	mounted () {  
-    	document.title="时间戳转换";
+	mounted () {
+    document.title = 'MuMuTools - Time Stamp'
     	this.init();
   	},
  	data () {
@@ -70,12 +70,12 @@ export default {
 	    {
 	       clearTimeout(t);//清除定时器
 	       if(this.stop){
-	       	
+
 	       }else{
 		       this.time = this.time + 1;
 		       setTimeout(this.timed,1000); //设定定时器，循环执行
 	       }
-	                    
+
 	    },
 	    stopT()
 	    {
@@ -97,7 +97,7 @@ export default {
 		    	this.time = Date.parse(new Date())/1000
 	  			t = setTimeout(this.timed(t),1000);
 	    	}
-    		
+
 	    },
     	dToU(nS)
     	{

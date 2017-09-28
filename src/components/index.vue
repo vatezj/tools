@@ -25,7 +25,7 @@
         </router-link> -->
         <p class="doc-title mdui-text-color-theme">啦啦啦</p>
         <p class="doc-title mdui-text-color-theme">德玛西亚</p>
-        
+
       </div>
   </div>
 </div>
@@ -33,8 +33,8 @@
 <script>
 export default {
   name: 'curl',
-  mounted () {  
-    document.title="木木工具"
+  mounted () {
+    document.title = 'MuMuTools - Index'
   },
 }
 </script>
