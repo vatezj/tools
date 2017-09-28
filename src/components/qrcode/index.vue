@@ -28,9 +28,9 @@
   <div v-html="">
      <vue-qr :bgSrc="bgSrc" :logoSrc="logoSrc" :text="url" height="400" width="400" :colorDark="colorDark" :colorLight="colorLight" :dotScale="dotScale" :callback="callback" :size='size'></vue-qr>
   </div>
-   
+
   </div>
-  
+
 </div>
 </template>
 <script>
@@ -49,8 +49,8 @@ export default {
           size:400
       }
   },
-  mounted () {  
-    document.title="二维码生成"
+  mounted () {
+    document.title = 'MuMuTools - QR Code'
   },
   methods: {
     onChangeImage(file) {
