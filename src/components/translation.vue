@@ -5,7 +5,7 @@
       <textarea v-model="start"></textarea>
     </div>
     <div class="mdui-col-xs-12 mdui-col-sm-12 mdui-col-md-2 mdui-col-lg-2 mdui-col-xl-2 center">
-      <select class="mdui-select" mdui-select ref="type">
+      <select class="mdui-select" ref="type" id="select">
         <option value="1">Chinese To English</option>
         <option value="2">English To Chinese</option>
       </select>
@@ -29,6 +29,9 @@
     mounted () {
       document.title = 'MuMuTools - Translator'
       this.getResult()
+      new mdui.Select('#select', {
+        position:'bottom'
+      })
     },
     watch: {
       start() {
@@ -64,6 +67,7 @@
       box-sizing: border-box;
     }
     textarea{
+      min-height: 300px;
       width: 100%;
       height: 300px;
       padding: 10px;
@@ -82,11 +86,9 @@
       justify-content: center;
     }
     @media screen and (max-width: 1024px) {
-      .change-button{
+      .center{
         padding: 30px 0;
-      }
-      .mb30{
-        display: none;
+        height: auto;
       }
     }
   }

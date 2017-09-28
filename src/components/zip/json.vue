@@ -5,7 +5,7 @@
 	   <h1 class="doc-title mdui-text-color-theme">json</h1>
 		<div class="json-input">
 			<textarea class="json-input-textarea" :class="{'boder-red': red,'boder-green': green}" id="json" ref='input1'>
-				
+
 			</textarea>
 		</div>
 		<div class="json-button">
@@ -14,7 +14,7 @@
 			<button class="mdui-btn mdui-color-theme-accent mdui-ripple" @click="clear()">清空</button>
 		</div>
 		<div class="show-json">
-			
+
 		</div>
 		<div class="json-tip mdui-ripple">
 			如下原因会造成JSON校验失败,而且会让你不知道为什么失败<br>
@@ -34,8 +34,8 @@ export default {
   		red:false
   	}
   },
-  mounted () {  
-    document.title="json美化"
+  mounted () {
+    document.title = 'MuMuTools - Json'
   },
   methods: {
   	check:function() {
@@ -58,41 +58,41 @@ export default {
             indentLevel = 0,
             inString    = false,
             currentChar = null;
-    	for (i = 0, len = json.length; i < len; i += 1) { 
+    	for (i = 0, len = json.length; i < len; i += 1) {
         currentChar = json.charAt(i);
             switch (currentChar) {
-            case '{': 
-            case '[': 
-                if (!inString) { 
+            case '{':
+            case '[':
+                if (!inString) {
                     targetJson += currentChar + "\n" + this.repeat(tab, indentLevel + 1);
-                    indentLevel += 1; 
-                } else { 
-                    targetJson += currentChar; 
+                    indentLevel += 1;
+                } else {
+                    targetJson += currentChar;
                 }
-                break; 
-            case '}': 
-            case ']': 
-                if (!inString) { 
-                    indentLevel -= 1; 
-                    targetJson += "\n" + this.repeat(tab, indentLevel) + currentChar; 
-                } else { 
-                    targetJson += currentChar; 
-                } 
-                break; 
-            case ',': 
-                if (!inString) { 
-                    targetJson += ",\n" + this.repeat(tab, indentLevel); 
-                } else { 
-                    targetJson += currentChar; 
-                } 
-                break; 
-            case ':': 
-                if (!inString) { 
-                    targetJson += ": "; 
-                } else { 
-                    targetJson += currentChar; 
-                } 
-                break; 
+                break;
+            case '}':
+            case ']':
+                if (!inString) {
+                    indentLevel -= 1;
+                    targetJson += "\n" + this.repeat(tab, indentLevel) + currentChar;
+                } else {
+                    targetJson += currentChar;
+                }
+                break;
+            case ',':
+                if (!inString) {
+                    targetJson += ",\n" + this.repeat(tab, indentLevel);
+                } else {
+                    targetJson += currentChar;
+                }
+                break;
+            case ':':
+                if (!inString) {
+                    targetJson += ": ";
+                } else {
+                    targetJson += currentChar;
+                }
+                break;
             case ' ':
             case "\n":
             case "\t":
@@ -100,17 +100,17 @@ export default {
                     targetJson += currentChar;
                 }
                 break;
-            case '"': 
+            case '"':
                 if (i > 0 && json.charAt(i - 1) !== '\\') {
-                    inString = !inString; 
+                    inString = !inString;
                 }
-                targetJson += currentChar; 
+                targetJson += currentChar;
                 break;
-            default: 
-                targetJson += currentChar; 
-                break;                    
-            } 
-    	} 
+            default:
+                targetJson += currentChar;
+                break;
+            }
+    	}
     	return targetJson;
   	},
   	//json 格式化

@@ -1,49 +1,46 @@
 <template>
+  <div class="mdui-container doc-container doc-no-cover pdl240 border-ccc">
+    <div class="pdl240">
+      <h1 class="doc-title mdui-text-color-theme">模拟 POST GET请求</h1>
+      <div class="select-url">
+        <div class="clear">
+          <div class="select-url-type fl" style="border:none;">
+            <select class="mdui-select" id="select" ref='type' style="border:none;">
+              <option v-for='type in types' :value="type.type">{{ type.name }}</option>
+            </select>
+          </div>
+          <div class="mdui-textfield mdui-textfield-floating-label select-url-input fl mdui-textfield-focus" style="border:none;">
+            <i class="mdui-icon material-icons">tv</i>
+            <label class="mdui-textfield-label">url</label>
+            <input class="mdui-textfield-input" v-model='sendUrl'></input>
+          </div>
+          <div class="select-url-button fl">
+            <button class="mdui-btn mdui-color-theme-accent mdui-ripple" @click="touchAjax()">发送</button>
+          </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+      <div class="url-param">
+        <h4 class="border-bottom-ccc mdui-ripple mdui-text-color-theme">参数</h4>
+        <div class="url-param-lists lists">
+          <div v-for="param in params" class="param-list list">
+            <div class="mdui-textfield mdui-textfield-floating-label wi50 fl">
+              <label class="mdui-textfield-label">key</label>
+              <input class="mdui-textfield-input" @click="addList(param.id)" :value="param.key" v-model='param.key'></input>
+            </div>
+            <div class="mdui-textfield mdui-textfield-floating-label wi50 fr">
+              <label class="mdui-textfield-label">value</label>
+              <input class="mdui-textfield-input" :value="param.value" @click="addList(param.id)" v-model='param.value'></input>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+      <div class="result-json" :class="{'border':showResult}" v-html='resultJson'>
 
-<div class="mdui-container doc-container doc-no-cover pdl240 border-ccc">
-	<div class="pdl240">
-		<h1 class="doc-title mdui-text-color-theme">模拟 POST GET请求</h1>
-	    <div class="select-url">
-	   		<div class="clear">
-		   		<div class="select-url-type fl" style="border:none;">
-		   			<select class="mdui-select" mdui-select ref='type' style="border:none;">
-			          <option v-for='type in types' :value="type.type">{{ type.name }}</option>
-			          <!-- <option value="3" disabled>State 3</option> -->
-			    	</select>
-		   		</div>
-			    <div class="mdui-textfield mdui-textfield-floating-label select-url-input fl mdui-textfield-focus" style="border:none;">
-			          <i class="mdui-icon material-icons">tv</i>
-			          <label class="mdui-textfield-label">url</label>
-			          <input class="mdui-textfield-input" v-model='sendUrl'></input>
-			    </div>
-			    <div class="select-url-button fl">
-			    	<button class="mdui-btn mdui-color-theme-accent mdui-ripple" @click="touchAjax()">发送</button>
-			    </div>
-			    
-		   </div>       
-	    </div>
-	    <div class="clear"></div>
-	    <div class="url-param">
-	   		<h4 class="border-bottom-ccc mdui-ripple mdui-text-color-theme">参数</h4>
-	   		<div class="url-param-lists lists">
-	   			<div v-for="param in params" class="param-list list">
-	   				<div class="mdui-textfield mdui-textfield-floating-label wi50 fl">
-			          <label class="mdui-textfield-label">key</label>
-			          <input class="mdui-textfield-input" @click="addList(param.id)" :value="param.key" v-model='param.key'></input>
-			    	</div>
-			    	<div class="mdui-textfield mdui-textfield-floating-label wi50 fr">
-			          <label class="mdui-textfield-label">value</label>
-			          <input class="mdui-textfield-input" :value="param.value" @click="addList(param.id)" v-model='param.value'></input>
-			    	</div>
-	   			</div>
-	   		</div>
-	   	</div>
-   	   <div class="clear"></div>
-   	   <div class="result-json" :class="{'border':showResult}" v-html='resultJson'>
-   	   	
-   	   </div>
-	</div>
-</div>
+      </div>
+    </div>
+  </div>
 </template>
 <script>
 import axios from 'axios'
@@ -51,20 +48,17 @@ import api from '../../fetch/api.js'
 import fun from '../../fetch/fun.js'
 export default {
   name: 'curl',
-  data ()
-  {
-  	return {
-  		baseU: 'https://api.vate.ren/Api/curl',
-  		resultJson:'',
-  		showResult:false,
+  data () {
+    return {
+      baseU: 'https://api.vate.ren/Api/curl',
+      resultJson:'',
+      showResult:false,
       sendUrl:'http://music.163.com/api/playlist/detail?id=387699584',
-  		params: [
-        {
-          id:1,
-          key: '',
-          value: ''
-        }
-      ],
+      params: [{
+        id:1,
+        key: '',
+        value: ''
+      }],
       types:[
         {
           type:1,
@@ -76,19 +70,17 @@ export default {
         }
       ],
       checkedTypes:1
-  	}
+    }
   },
-  mounted () {  
-    document.title="post get 请求"
+  mounted () {
+    document.title = 'MuMuTools - Request'
+    new mdui.Select('#select', {
+      position:'bottom'
+    })
   },
   methods:{
-  	init(){
-  		document.title="我是标题"
-  	},
-  	touchAjax:function()
-  	{ 
+  	touchAjax() {
   		this.get(this.sendUrl)
-  		//console.log(url)
   	},
   	addList(id){
       if(this.params.length == id)
@@ -150,14 +142,14 @@ export default {
 .select-url{
 	border-top: 1px solid #ccc;
 	padding: 1px;
-	clear: both;	
+	clear: both;
 }
 .select-url-type{
 	padding-top: 34px;
 	padding-bottom: 8px;
 	width: 10%;
 	border: 1px solid #ffffff;
-	
+
 }
 .select-url-input{
 	width: 68%;
@@ -171,7 +163,7 @@ export default {
 }
 .url-param{
 	/* margin-top: 10px; */
-	clear: both;	
+	clear: both;
 	/* border: 1px solid red; */
 	border-top: 1px solid #ccc;
 }
@@ -183,7 +175,7 @@ export default {
 }
 .result-json{
 	padding: 20px;
-	width: 90%;	
+	width: 90%;
 }
 .border{
 	border: 1px solid #ccc;
