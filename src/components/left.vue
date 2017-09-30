@@ -1,5 +1,5 @@
 <template>
-<div class="mdui-drawer mdui-drawer-close" id="main-drawer">
+<div class="mdui-drawer" id="main-drawer">
 	<div class="mdui-list" mdui-collapse="{accordion: true}" style="margin-bottom: 76px;">
 
 		<!--menu-->
