@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div>
     <t-nav></t-nav>
     <left></left>
     <router-view></router-view>
@@ -9,19 +9,15 @@
 </template>
 
 <script>
-import chat from './components/chat/index.vue'
-import tNav from './components/nav.vue'
-import left from './components/left.vue'
-import alert from './components/alert.vue'
+import chat    from './components/chat/index.vue'
+import tNav    from './components/nav.vue'
+import left    from './components/left.vue'
+import alert   from './components/alert.vue'
 import fontNav from './components/fontNav.vue'
 export default {
   name: 'app',
   components: {
-    'left': left,
-    'alert': alert,
-    'font-nav':fontNav,
-    't-nav':tNav,
-    'chat':chat
+    left, alert, fontNav, tNav, chat
   }
 }
 </script>
@@ -30,14 +26,6 @@ export default {
 .ml240{
 	margin-left: 240px;
 }
-/* .pdl240{
-    padding-left: 240px;
-}
-@media screen and (max-width: 1030px) {
-     .pdl240{
-        padding-left: 30px;
-      } 
-} */
 .ml32{
   margin-left: 32px;
 }
