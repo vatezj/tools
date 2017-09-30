@@ -1,5 +1,5 @@
 <template>
-<div class="mdui-drawer mdui-drawer-close" id="main-drawer">
+<div class="mdui-drawer" id="main-drawer">
 	<div class="mdui-list" mdui-collapse="{accordion: true}" style="margin-bottom: 76px;">
 
 		<!--menu-->
@@ -11,7 +11,7 @@
 				<div class="mdui-list-item-content">{{data.title}}</div>
 			</div>
 		</router-link>
-		
+
 	</div>
 </div>
 </template>
@@ -60,7 +60,7 @@ export default {
 					link: '/base64',
 					icon: 'view_carousel',
 					title: 'Generating Base64',
-					color: 'purple'   
+					color: 'purple'
 				}
 			]
 		}
@@ -70,7 +70,15 @@ export default {
 
 <style scoped>
 /*解决菜单关闭后阴影还在的bug*/
-.mdui-drawer-close{
-	box-shadow: none;
+.mdui-drawer{
+  box-shadow: none;
+}
+@media (min-width: 1024px){
+  .mdui-drawer-open{
+    box-shadow: none!important;
+  }
+}
+.mdui-drawer-open{
+  box-shadow: 0 8px 10px -5px rgba(0, 0, 0, .2), 0 16px 24px 2px rgba(0, 0, 0, .14), 0 6px 30px 5px rgba(0, 0, 0, .12);
 }
 </style>
