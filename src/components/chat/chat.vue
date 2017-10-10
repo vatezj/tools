@@ -112,7 +112,7 @@ export default {
     chatWebSocket()
     {
       var _this = this;
-      var url = 'ws://120.24.47.145:9502';
+      var url = 'wss://websocket.vate.ren/wss';
       this.socket = new WebSocket(url);
       this.socket.onopen = function(evt) {
         //websocket.send('进入房间');
