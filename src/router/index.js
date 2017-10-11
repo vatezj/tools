@@ -28,6 +28,9 @@ import urlencode from '../components/url/encode.vue'
 //翻译
 import translation from '../components/translation.vue'
 
+//图片压缩
+import image from '../components/image.vue'
+
 Vue.use(Router)
 
 export default new Router({
@@ -80,6 +83,11 @@ export default new Router({
 	    path: '/translation',
 	    name: 'translation',
 	    component: translation
+	  },
+	  {
+	    path: '/image',
+	    name: 'image',
+	    component: image
   	}
   ]
 })
