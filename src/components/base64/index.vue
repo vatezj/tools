@@ -4,7 +4,7 @@
     <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent" @click="input.click()">Upload File</button>
     <div class="prview" v-if="base64">
       <p>size : {{ base64.length }}</p>
-      <img :src="base64" v-if="base64.indexOf('data:image') >= 0"/>
+      <img :src="fileUrl" v-if="base64.indexOf('data:image') >= 0"/>
     </div>
     <div class="mdui-textfield">
       <textarea class="mdui-textfield-input" placeholder="Please select a file" v-model="base64" @click="click"></textarea>
@@ -17,7 +17,8 @@
     data() {
       return {
         input: document.createElement('input'),
-        base64:''
+        base64:'',
+        fileUrl:''
       }
     },
     mounted() {
@@ -27,6 +28,7 @@
     },
     methods: {
       changeFile() {
+        this.fileUrl = window.URL.createObjectURL(event.target.files[0])
         let reader = new FileReader()
         reader.onload = evt =>{
           this.base64 = evt.target.result
@@ -46,7 +48,7 @@
     margin-top: 16px;
     img{
       display: block;
-      max-width: 300px;
+      max-width: 350px;
     }
   }
 </style>
