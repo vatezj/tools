@@ -3,22 +3,25 @@
 <template>
 <div class="mdui-container doc-container">
     <h1 class="doc-title mdui-text-color-theme">图片压缩</h1>
-    <div class="preview" v-if="oldImgURL">
+    <div class="preview">
          <div class="mdui-col-xs-6">
             <div class="mdui-typo">
-                <h4>原图 Size : {{oldImgSize}}</h4>
+                <h5 class="mdui-typo-display-4-opacity">原图 Size : {{oldImg.size}} KB</h5>
             </div>
-            <img :src="oldImgURL">
+            <img :src="oldImg.url">
         </div>
         <div class="mdui-col-xs-6">
             <div class="mdui-typo">
-                <h4>压缩后 Size : {{newImgSize}}</h4>
-                <img :src="newImgURL">
+                <h5 class="mdui-typo-display-4-opacity">压缩后 Size : {{newImg.size}} KB</h5>
+                <img :src="newImg.url">
             </div>
         </div>
     </div>
-    <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent" @click="input.click()">Upload File</button>
-    <input type="range" max="100" min="1" value="50" v-model="size">
+    <p class="mdui-col-xs-3">调整滑块来选择质量 当前质量 : {{size}}</p>
+    <label class="mdui-slider mdui-slider-discrete mdui-col-xs-9">
+        <input type="range" step="1" min="1" max="100" value="50" v-model="size"/>
+    </label>
+    <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent" @click="input.click()">上传图片</button>
   </div>
 </template>
 
@@ -27,10 +30,11 @@ export default {
     data() {
         return {
              input: document.createElement('input'),
-             oldImgURL: '',
-             oldImgSize:'',
-             newImgURL: '',
-             newImgSize:'',
+             oldImg: {
+                 url: require('./../assets/img/img_min_test.png'),
+                 size: '938'
+             },
+             newImg: { },
              size:'50'
         }
     },
@@ -38,9 +42,13 @@ export default {
         document.title = 'MuMuTools - 压缩图片'
         this.input.setAttribute('type','file')
         this.input.addEventListener('change',this.seleteFile)
+        this.minImg()
     },
     watch: {
         size() {
+            this.minImg()
+        },
+        'oldImg.url'() {
             this.minImg()
         }
     },
@@ -70,19 +78,18 @@ export default {
             }
             return new Blob([u8arr], {type:mime})
         },
+        getFileInfo(file) {
+            return {
+                url: window.URL.createObjectURL(file),
+                size: (file.size / 1024).toFixed(2)
+            }
+        },
         seleteFile() {
-            let file = event.target.files[0]
-            //上传的图片
-            this.oldImgURL = window.URL.createObjectURL(file)
-            this.oldImgSize = (file.size / 1024).toFixed(2) + 'K'
-            this.minImg()
+            this.oldImg = this.getFileInfo(event.target.files[0])
         },
         minImg(){
-             //压缩图片
-            this.todoURL(this.oldImgURL,this.size/100).then(imgData => {
-                let newFile = this.dataURLtoBlob(imgData)
-                this.newImgURL = window.URL.createObjectURL(newFile)
-                this.newImgSize = (newFile.size / 1024).toFixed(2) + 'K'
+            this.todoURL(this.oldImg.url,this.size/100).then(imgData => {
+                this.newImg = this.getFileInfo(this.dataURLtoBlob(imgData))
             })
         }
     }
