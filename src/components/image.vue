@@ -22,6 +22,7 @@
         <input type="range" step="1" min="1" max="100" value="50" v-model="size"/>
     </label>
     <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent" @click="input.click()">上传图片</button>
+    <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent" @click="download">保存图片</button>
   </div>
 </template>
 
@@ -43,6 +44,7 @@ export default {
         this.input.setAttribute('type','file')
         this.input.addEventListener('change',this.seleteFile)
         this.minImg()
+        mdui.updateSliders()
     },
     watch: {
         size() {
@@ -91,6 +93,14 @@ export default {
             this.todoURL(this.oldImg.url,this.size/100).then(imgData => {
                 this.newImg = this.getFileInfo(this.dataURLtoBlob(imgData))
             })
+        },
+        download() {   
+            let link = document.createElementNS('http://www.w3.org/1999/xhtml', 'a')
+            link.href = this.newImg.url
+            link.download = '下载图片'
+            let event = document.createEvent('MouseEvents')
+            event.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null)
+            link.dispatchEvent(event)
         }
     }
 }
