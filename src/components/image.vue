@@ -65,7 +65,7 @@ export default {
                     canvas.width = img.width
                     canvas.height = img.height
                     ctx.drawImage(img, 0, 0, canvas.width,canvas.height)
-                    suc(canvas.toDataURL('image/jpeg',size))    
+                    suc(canvas.toDataURL(this.oldImg.type,size))    
                 }
             })
         },
@@ -83,14 +83,15 @@ export default {
         getFileInfo(file) {
             return {
                 url: window.URL.createObjectURL(file),
-                size: (file.size / 1024).toFixed(2)
+                size: (file.size / 1024).toFixed(2),
+                type: file.type
             }
         },
         seleteFile() {
             this.oldImg = this.getFileInfo(event.target.files[0])
         },
         minImg(){
-            this.todoURL(this.oldImg.url,this.size/100).then(imgData => {
+            this.todoURL(this.oldImg.url,this.size / 100).then(imgData => {
                 this.newImg = this.getFileInfo(this.dataURLtoBlob(imgData))
             })
         },
