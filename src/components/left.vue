@@ -66,7 +66,12 @@ export default {
 					icon: 'local_mall',
 					title: '压缩图片',
 					color: 'deep-orange'
-				}
+					},{
+						link: '/email',
+						icon: 'email',
+						title: '发送邮件',
+						color: 'cyan'
+					}
 			]
 		}
   	}
