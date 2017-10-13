@@ -23,7 +23,7 @@ export default {
 	data()
 	{
 		return{
-			'api':'http://47.93.20.8/ping.php',
+			'api':'https://local.vate.ren/ping.php',
 			'url':'vate.ren',
 			'ip':'47.93.20.8'
 		}
