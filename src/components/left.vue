@@ -28,7 +28,7 @@ export default {
 					color: 'blue'
 				},{
 					link: '/image',
-					icon: 'local_mall',
+					icon: 'insert_photo',
 					title: '压缩图片',
 					color: 'deep-orange'
 				},{
