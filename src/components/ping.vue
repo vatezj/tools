@@ -28,6 +28,9 @@ export default {
 			'ip':'47.93.20.8'
 		}
 	},
+	mounted() {
+        document.title = 'MuMuTools - 域名ip'
+    },
 	methods:
 	{
 		ping()
