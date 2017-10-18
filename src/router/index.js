@@ -28,6 +28,12 @@ import urlencode from '../components/url/encode.vue'
 //翻译
 import translation from '../components/translation.vue'
 
+//邮件
+import email from '../components/email.vue'
+
+//邮件
+import ping from '../components/ping.vue'
+
 //图片压缩
 import image from '../components/image.vue'
 
@@ -88,6 +94,16 @@ export default new Router({
 	    path: '/image',
 	    name: 'image',
 	    component: image
-  	}
+	  },
+	  {
+	    path: '/email',
+	    name: 'email',
+	    component: email
+  	  },
+  	  {
+	    path: '/ping',
+	    name: 'ping',
+	    component: ping
+  	  },
   ]
 })

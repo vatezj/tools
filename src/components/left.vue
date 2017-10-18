@@ -27,6 +27,16 @@ export default {
 					title: '首页',
 					color: 'blue'
 				},{
+					link: '/image',
+					icon: 'insert_photo',
+					title: '压缩图片',
+					color: 'deep-orange'
+				},{
+					link: '/ping',
+					icon: 'assistant_photo',
+					title: '域名ip',
+					color: 'cyan'
+				},{
 					link: '/php/curl',
 					icon: 'layers',
 					title: 'post/get 请求',
@@ -56,16 +66,11 @@ export default {
 					icon: 'assistant_photo',
 					title: '翻译',
 					color: 'brown'
-   			},{
+   				},{
 					link: '/base64',
 					icon: 'view_carousel',
 					title: 'base64 转换',
 					color: 'purple'
-				},{
-					link: '/image',
-					icon: 'local_mall',
-					title: '压缩图片',
-					color: 'deep-orange'
 				}
 			]
 		}
