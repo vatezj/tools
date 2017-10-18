@@ -65,7 +65,7 @@ export default {
                     canvas.width = img.width
                     canvas.height = img.height
                     ctx.drawImage(img, 0, 0, canvas.width,canvas.height)
-                    suc(canvas.toDataURL(this.oldImg.type,size))    
+                    suc(canvas.toDataURL('image/jpeg',size))    
                 }
             })
         },
@@ -83,8 +83,7 @@ export default {
         getFileInfo(file) {
             return {
                 url: window.URL.createObjectURL(file),
-                size: (file.size / 1024).toFixed(2),
-                type: file.type
+                size: (file.size / 1024).toFixed(2)
             }
         },
         seleteFile() {
